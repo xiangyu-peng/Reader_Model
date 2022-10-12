@@ -1,11 +1,12 @@
-# Reader Model Instructions
+# Reader Model
+
+This code accompanies the paper [Guiding Neural Story Generation with Reader Models](https://arxiv.org/abs/2112.08596)
 <img src="README_images/RM_figure1.png" width="300">
 
-Data can be found [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/comet/data/storycommonsense_data.zip)
 ## :boom: Installation
 1. Virtual env: `conda env create -f environment.yml python=3.6`
 2. Install the [COMeT](https://github.com/atcbosselut/comet-commonsense)
-    - Follow the instruction [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/comet/comet-commonsense/README.md).
+    - Follow the instruction in the COMET original repo.
     - There are some extra packages you need to install here.
     ```ruby
     conda install -c pytorch pytorch
@@ -25,7 +26,7 @@ Data can be found [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/come
       python scripts/interactive/atomic_single_example.py --model_file pretrained_models/atomic_pretrained_model.pickle
     ```
  
-    - Some absolute paths have to be changed [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/comet/comet-commonsense/src/interactive/functions.py).    
+    - Some absolute paths have to be changed after you clone the repo `./comet/comet-commonsense/src/interactive/functions.py`.    
 
     - How to use COMeT to convert sentence as knowledge graph?   
 
@@ -35,10 +36,10 @@ Data can be found [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/come
         
 3. Install verbatlas SRL
     - The file is located at `./verbatlas/src`
-    - Installation follows [here](https://github.gatech.edu/xpeng62/ReaderModel/tree/master/verbatlas)
+    - Installation follows [here](https://github.com/xiangyu-peng/Reader_Model/tree/master/verbatlas)
 4. No need to prepare for verbnet parser. Location: `./semparse-core/`
-5. Install allennlp and allennlp-model based on [HERE](https://github.gatech.edu/xpeng62/ReaderModel/tree/allennlp).
-6. Install new comet-atomic 2020 [HERE](https://github.gatech.edu/xpeng62/ReaderModel/tree/comet/comet-atomic-2020).
+5. Install allennlp and allennlp-model.
+6. Install new comet-atomic 2020 from AI2.
 
 ### Possible Bugs!!!
 1. Pattern cannot used in python 3.7
@@ -80,7 +81,7 @@ For generating action space and new state, the main file is [here](verbnet-appro
 - `generate_actions()`: Given the KG and then generate all the possible action space.
 - `forward()`: Different round will trigger different functions. It will be called in [main.py](verbnet-approach/src/main.py) and move one sentence forward.
 
-#### :star_struck: Features (defined [here](https://github.gatech.edu/xpeng62/ReaderModel/blob/master/verbnet-approach/src/main.py))
+#### :star_struck: Features
 * `trainer_type`: `QA` or `generation` or `KG` or `KG_diff` or `KG_diff_file`, We are using `KG_diff_file` as default.
 * `model_name_or_path`: GPT-2's pretrained model path
 * `mapping_file` and `verbnet_json`: path of verbnet files.
