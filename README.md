@@ -1,6 +1,7 @@
 # Reader Model
 
 This code accompanies the paper [Guiding Neural Story Generation with Reader Models](https://arxiv.org/abs/2112.08596)
+
 <img src="README_images/RM_figure1.png" width="300">
 
 ## :boom: Installation
